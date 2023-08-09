@@ -1,0 +1,136 @@
+.app-convem {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+
+  background-image: url("../../assets/space.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-convem img {
+  width: 400px;
+  height: 60px;
+  padding: 10px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 640px;
+  height: 50vh;
+
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  border-radius: 10px;
+
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.text {
+  padding: 2rem;
+}
+
+.text h1 {
+  padding: 1rem;
+}
+
+.response {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.response-input {
+  width: 80%;
+  max-width: 300px;
+  height: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.send {
+  width: 30%;
+  max-width: 95px;
+  height: 1.5rem;
+  background-color: #5c96bf;
+  border-radius: 5px;
+}
+
+.footer {
+  color: #9d9797;
+}
+
+.network {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.alert {
+  display: none;
+  width: 85%;
+  margin: auto;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #C61A1A;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+
+  @media (min-width: 601px) and (max-width: 992px) {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  @media (min-width: 993px) {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-convem img {
+    width: 300px;
+    height: auto;
+  }
+
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .response-input {
+    width: 85%;
+    max-width: 100%;
+  }
+
+  .send {
+    width: 50%;
+    max-width: 150px;
+  }
+
+  .network {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-convem img {
+    width: 200px;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}

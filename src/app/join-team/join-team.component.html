@@ -1,0 +1,51 @@
+<div class="app-convem">
+  <!-- header -->
+  <header class="nav-bar">
+      <div class="logo-convem">
+      <a href="https://www.convem-fintech.com.br/" target="_blank">
+          <img src="../../assets/logo-convem.png" alt="logo convem" />
+      </a>
+      </div>
+  </header>
+
+  <!-- article -->
+  <article class="main">
+      <div class="container">
+      <div class="text">
+          <h1>Seja bem vindo a CONVEM!</h1>
+          <p>Você quer se juntar ao time da Convem?</p>
+      </div>
+
+
+      <div class="response">
+          <input class="response-input" id="response" [(ngModel)]="response" type="text" placeholder="Digite sua resposta aqui">
+      </div>
+        <button class="send" (click)="sendResponse()">ENVIAR</button>
+      <div *ngIf="alertVisible" class="alert">{{ alertText }}</div>
+
+      <div class="alert" [style.display]="alertVisible ? 'block' : 'none'">
+          <p>{{ alertText }}</p>
+      </div>
+      </div>
+  </article>
+
+  <!-- Footer -->
+  <footer>
+      <div class="footer">
+      <p>©Copyright 2023 - allesoares</p>
+      <div class="network">
+          <a href="https://github.com/allesoares95" target="_blank">
+          <img src="../../assets/github.png" alt="img github" width="30px" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/allesoares/" target="_blank">
+          <img
+              src="../../assets/linkedin.png"
+              alt="img linkedin"
+              width="30px"
+          />
+          </a>
+      </div>
+      </div>
+  </footer>
+  </div>
