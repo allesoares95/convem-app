@@ -6,9 +6,6 @@
 <img src="./src/assets/project.jpg" width="200">
 </div>
 
-[Acesse o Projeto](https://convem-app.vercel.app/)
-
-
 ### Como Iniciar o Projeto
 Siga as instruções abaixo para clonar o projeto e iniciar tanto o servidor Node.js quanto a aplicação Angular.
 
@@ -31,3 +28,6 @@ Certifique-se de ter o Node.js e o Angular CLI instalados em sua máquina antes 
 
 Node.js: https://nodejs.org/<br>
 Angular CLI: https://angular.io/cli
+
+### coverage
+rodando npm run coverage você consegue buildar o coverage e verificar os test

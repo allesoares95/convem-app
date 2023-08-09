@@ -4,7 +4,10 @@
   "scripts": {
     "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "start-backend": "cd src/app/convem-api && node server.js",
-    "start-frontend": "ng serve -o"
+    "start-frontend": "ng serve -o",
+    "test": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng test ",
+    "test-coverage": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng test --code-coverage"
+
   },
   "private": true,
   "dependencies": {
