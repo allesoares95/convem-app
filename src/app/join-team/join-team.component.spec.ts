@@ -3,7 +3,6 @@ import { JoinTeamComponent } from './join-team.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('JoinTeamComponent', () => {
   let component: JoinTeamComponent;
@@ -13,7 +12,6 @@ describe('JoinTeamComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       declarations: [JoinTeamComponent],
       imports: [HttpClientTestingModule]
     }).compileComponents();
@@ -34,12 +32,12 @@ describe('JoinTeamComponent', () => {
     const mockResponse = { message: 'success' };
     const trimmedResponse = 'sim';
 
-    spyOn(httpClient, 'post').and.returnValue(of(mockResponse));
+    spyOn(httpClient, 'get').and.returnValue(of(mockResponse));
 
     component.response = trimmedResponse;
     component.sendResponse();
 
-    expect(httpClient.post).toHaveBeenCalledWith('http://localhost:3000/api/check-response', { response: trimmedResponse });
+    expect(httpClient.get).toHaveBeenCalledWith('http://localhost:3000/api/check-response', { params: { response: trimmedResponse } });
     expect(component.alertText).toBe('Você está mais próximo de se juntar ao time!');
     expect(component.alertVisible).toBe(true);
   });
