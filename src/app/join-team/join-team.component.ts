@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 const SUCCESS_MESSAGE = 'Você está mais próximo de se juntar ao time!';
-const ERROR_MESSAGE = 'Erro';
+const ERROR_MESSAGE = 'Error';
 const API_URL = 'http://localhost:3000/api/check-response';
 
 @Component({
@@ -22,22 +22,19 @@ export class JoinTeamComponent {
 
   sendResponse() {
     const trimmedResponse = this.response.trim().toLowerCase();
-    if (trimmedResponse === 'sim') {
-      this.http.get<any>(API_URL, { params: { response: trimmedResponse } })
+      this.http.post<any>(API_URL,  { response: trimmedResponse } )
         .pipe(
-          catchError((error: HttpErrorResponse) => {
+          catchError((error: HttpErrorResponse): Observable<any> => {
             console.error('Error:', error);
-            return throwError('Erro');
+            this.alertText = ERROR_MESSAGE;
+            this.alertVisible = true;
+            return throwError(() => new Error('Error : '));
           }),
           tap((data: any) => {
-            this.alertText = data.message === 'success' ? SUCCESS_MESSAGE : ERROR_MESSAGE;
+            this.alertText = SUCCESS_MESSAGE;
             this.alertVisible = true;
           })
         )
         .subscribe();
-    } else {
-      this.alertText = ERROR_MESSAGE;
-      this.alertVisible = true;
-    }
   }
 }

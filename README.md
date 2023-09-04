@@ -30,4 +30,4 @@ Node.js: https://nodejs.org/<br>
 Angular CLI: https://angular.io/cli
 
 ### coverage
-rodando npm run coverage você consegue buildar o coverage e verificar os test
+rodando ng test --code-coverage  você consegue buildar o coverage e verificar os test

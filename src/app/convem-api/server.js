@@ -10,8 +10,8 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.get('/api/check-response', (req, res) => {
-  const { response } = req.query;
+app.post('/api/check-response', (req, res) => {
+  const { response } = req.body;
   if (response.toLowerCase() === 'sim') {
     res.json({ message: 'success' });
   } else {
